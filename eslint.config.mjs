@@ -6,7 +6,7 @@ export default [
     ignores: ["**/dist/**", "**/node_modules/**", "**/coverage/**"],
   },
   {
-    files: ["packages/*/src/**/*.ts"],
+    files: ["packages/*/src/**/*.ts", "packages/*/src/**/*.tsx"],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
