@@ -1,0 +1,21 @@
+# Trivy security scanner configuration
+# Used in CI for IaC and dependency scanning (replaces Shisho Guard IaC scan)
+
+scan:
+  skip-dirs:
+    - node_modules
+    - dist
+    - coverage
+    - .git
+
+vulnerability:
+  type:
+    - os
+    - library
+
+severity:
+  - CRITICAL
+  - HIGH
+  - MEDIUM
+
+format: table
