@@ -23,15 +23,15 @@
     "ajv-formats": "^3.0.1",
     "better-sqlite3": "^12.10.0",
     "drizzle-orm": "^0.45.2",
-    "js-yaml": "^4.1.0",
-    "uuid": "^10.0.0"
+    "js-yaml": "^4.2.0",
+    "uuid": "^11.1.1"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/js-yaml": "^4.0.9",
     "@types/uuid": "^10.0.0",
-    "@vitest/coverage-v8": "^2.0.0",
+    "@vitest/coverage-v8": "^3.2.6",
     "drizzle-kit": "^0.31.10",
-    "vitest": "^2.0.0"
+    "vitest": "^3.2.6"
   }
 }

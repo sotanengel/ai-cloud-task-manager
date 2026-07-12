@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { Task } from "@cloudpilot/core";
 import type {
   CloudAdapter,

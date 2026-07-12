@@ -22,7 +22,8 @@ describe("L2: schema validation", () => {
   });
 
   it("rejects missing required field (spec.provider)", () => {
-    const { provider: _p, ...specWithoutProvider } = VALID_SCRIPT.spec;
+    const { provider: _provider, ...specWithoutProvider } = VALID_SCRIPT.spec;
+    void _provider;
     const script = { ...VALID_SCRIPT, spec: specWithoutProvider };
     const result = validateSchema(script);
     expect(result.ok).toBe(false);

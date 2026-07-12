@@ -16,7 +16,7 @@ export function App() {
 
       <main>
         {selectedTaskId ? (
-          <TaskDetail taskId={selectedTaskId} onBack={() => setSelectedTaskId(null)} />
+          <TaskDetail taskId={selectedTaskId} onBack={() => { setSelectedTaskId(null); }} />
         ) : (
           <TaskList onSelectTask={setSelectedTaskId} />
         )}
