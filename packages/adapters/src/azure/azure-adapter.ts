@@ -32,7 +32,7 @@ export class AzureAdapter implements CloudAdapter {
 
   async diff(task: Task): Promise<DiffResult> {
     return {
-      additions: task.script.spec.resources.map((r) => ({
+      additions: task.script.spec.resources.map((r: { replicas?: number; [key: string]: unknown }) => ({
         type: r.type,
         name: r.name,
         details: `Container App will be created in ${task.script.spec.region}`,
@@ -57,7 +57,7 @@ export class AzureAdapter implements CloudAdapter {
   }
 
   private estimateCost(task: Task): number {
-    return task.script.spec.resources.reduce((sum, r) => {
+    return task.script.spec.resources.reduce((sum: number, r: { replicas?: number }) => {
       const replicas = r.replicas ?? 1;
       return sum + replicas * 0.032 * 730;
     }, 0);

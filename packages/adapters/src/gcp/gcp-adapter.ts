@@ -32,7 +32,7 @@ export class GcpAdapter implements CloudAdapter {
 
   async diff(task: Task): Promise<DiffResult> {
     return {
-      additions: task.script.spec.resources.map((r) => ({
+      additions: task.script.spec.resources.map((r: { replicas?: number; [key: string]: unknown }) => ({
         type: r.type,
         name: r.name,
         details: `Cloud Run service will be created in ${task.script.spec.region}`,
