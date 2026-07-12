@@ -64,7 +64,7 @@ export function TaskList({ onSelectTask }: Props) {
             {tasks.map((task) => (
               <tr
                 key={task.id}
-                onClick={() => onSelectTask(task.id)}
+                onClick={() => { onSelectTask(task.id); }}
                 style={{ cursor: "pointer", borderBottom: "1px solid #dee2e6" }}
               >
                 <td style={td}>{task.script.metadata.name}</td>

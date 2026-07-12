@@ -4,9 +4,9 @@ import { z } from "zod";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { join, dirname } from "node:path";
-import { runValidationPipeline, TaskOrchestrator } from "@cloudpilot/core";
+import { runValidationPipeline } from "@cloudpilot/core";
 import { validateSyntax } from "@cloudpilot/core";
-import type { TaskScript } from "@cloudpilot/core";
+import type { TaskScript , TaskOrchestrator } from "@cloudpilot/core";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCHEMA_PATH = join(__dirname, "../../../../", "schemas", "task-script.v1.json");
@@ -101,7 +101,7 @@ export function createMcpServer(orchestrator: TaskOrchestrator): McpServer {
           {
             type: "text" as const,
             text: JSON.stringify(
-              tasks.map((t) => ({
+              tasks.map((t: { id: string; status: string; script: { metadata: { name: string }; spec: { provider: string; environment: string } }; createdAt: unknown }) => ({
                 id: t.id,
                 status: t.status,
                 name: t.script.metadata.name,

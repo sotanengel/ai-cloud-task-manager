@@ -58,7 +58,7 @@ export class GcpAdapter implements CloudAdapter {
 
   private estimateCost(task: Task): number {
     // Cloud Run pricing: ~$0.00002400 per vCPU-second
-    return task.script.spec.resources.reduce((sum, r) => {
+    return task.script.spec.resources.reduce((sum: number, r: { replicas?: number }) => {
       const replicas = r.replicas ?? 1;
       return sum + replicas * 0.024 * 730;
     }, 0);
