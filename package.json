@@ -25,14 +25,11 @@
     "node": ">=20.0.0"
   },
   "overrides": {
-    "@babel/core": ">=7.29.6",
-    "esbuild": ">=0.28.1",
-    "hono": ">=4.12.25",
-    "js-yaml": ">=4.2.0",
-    "react-router": ">=6.30.4",
-    "uuid": ">=11.1.1",
-    "vite": ">=6.4.3",
-    "vitest": "$vitest"
+    "@babel/core": "7.29.6",
+    "esbuild": "0.28.1",
+    "hono": "4.12.25",
+    "js-yaml": "4.2.0",
+    "react-router": "6.30.4"
   },
   "dependencies": {}
 }
